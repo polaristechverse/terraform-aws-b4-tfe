@@ -8,8 +8,8 @@ resource "aws_route53_record" "www" {
   name    = "test.polarisonline.site"
   type    = "A"
   alias {
-    name                   = module.PolarisELB.elb_dns_name
-    zone_id                = module.PolarisELB.elb_zone_id
+    name                   = module.elb.elb_dns_name
+    zone_id                = module.elb.elb_zone_id
     evaluate_target_health = true
   }
 }
