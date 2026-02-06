@@ -12,9 +12,9 @@ module "Instance" {
     ap-south-1 = "Desktop_key"
   }
   instance_type  = "t2.micro"
-  public_subnet  = module.polarisnetwork.PublicSubnet_Id
-  private_subnet = module.polarisnetwork.PrivateSubnet_Id
-  sg_id          = module.PolarisSecurity.sg_id
-  vpc_name       = module.polarisnetwork.vpc_name
-  depends_on     = [module.polarisnetwork]
+  public_subnet  = module.Network.PublicSubnet_Id
+  private_subnet = module.Network.PrivateSubnet_Id
+  sg_id          = module.Security.sg_id
+  vpc_name       = module.Network.vpc_name
+  depends_on     = [module.Network]
 }
